@@ -1,0 +1,32 @@
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/postgres
+    pool:
+      initialSize: 2
+      maxSize: 2
+    properties:
+      schema: public
+    username: postgres
+    password: mysecretpassword
+  sleuth:
+    sampler:
+      probability: 1.0
+
+# Customize logging level for local mode
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: TRACE
+        data:
+          r2dbc: TRACE
+    io:
+      r2dbc:
+        postgresql:
+          QUERY: TRACE
