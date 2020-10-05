@@ -13,13 +13,14 @@ public class TestRepo {
     DatabaseClient databaseClient;
 
     @Transactional
-    public Mono<Void> insert(String id) {
+    public Mono<String> insert(String id) {
         return
                 databaseClient.
                     insert()
                     .into("applied_message")
                     .value("id", id)
                     .then()
+                    .thenReturn(id)
             ;
     }
 

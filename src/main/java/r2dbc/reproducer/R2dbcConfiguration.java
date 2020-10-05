@@ -46,7 +46,6 @@ public class R2dbcConfiguration {
     @Bean
     public ConnectionFactory connectionFactoryWithTracing(ConnectionPool original) {
         return ProxyConnectionFactory.builder(original)
-            .listener(new TracingExecutionListener(tracer))
             .build();
     }
 
