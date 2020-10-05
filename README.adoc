@@ -1,16 +1,24 @@
 = R2DBC issue reproducer
 
-This project is used to reproduce issue
-The code is on `r2dbc.reproduced.Test` class. This class perform 4 insertion on the same table.
+This project is used to reproduce issue https://github.com/pgjdbc/r2dbc-postgresql/issues/334
+This code provide 1 endpoint who perform 1 insertion on database.
 
 == Run
 
     docker-compose up -d
     mvn clean spring-boot:run
 
-you can launch the project several times and have a duration average.
-This branch use the `0.8.3.RELEASE (Arabba-SR4)` version of `r2dbc-postgres`
+This branch use the `0.8.4.RELEASE (Arabba-SR6)` version of `r2dbc-postgres`.
+
+To test you can run the taurus scenario `test.yml` using bzt.
+Or you can perform a `GET` request on `http://localhost:8080/test` endpoint and see response time log, like that.
+
+```
+2020-10-06 09:13:35.338  INFO [-,0de4a5dca584efce,0de4a5dca584efce,true] 338318 --- [or-http-epoll-4] r.reproducer.StartAndEndLogWebFilter     : INTERNAL end request to /test with status code 200 OK. duration: 47ms
+```
+
+You can see the zipkin trace, using this url `http://localhost:9411/zipkin/traces/0de4a5dca584efce`. the `0de4a5dca584efce` id can be found on logs.
 
 == found error
 
-On my laptop using the `0.8.3.RELEASE (Arabba-SR4)` version give a duration average = 200ms and using `0.8.4.RELEASE (Arabba-SR6)` give 500ms (same with `0.8.5.RELEASE (Arabba-SR7)`).
+On my laptop using the `0.8.3.RELEASE (Arabba-SR4)` version give a duration average = 8ms and using `0.8.4.RELEASE (Arabba-SR6)` give 30ms (same with `0.8.5.RELEASE (Arabba-SR7)`).

@@ -1,0 +1,13 @@
+execution:
+  - concurrency: 2
+    ramp-up: 1s
+    hold-for: 15s
+    scenario: 1-test
+scenarios:
+  1-test:
+    default-address: http://localhost:8080
+    requests:
+      - url: test
+        label: run test
+        timeout: 200ms
+        method: GET

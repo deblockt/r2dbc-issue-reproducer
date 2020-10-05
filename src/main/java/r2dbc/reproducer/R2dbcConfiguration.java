@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.util.StringUtils;
+import zipkin2.internal.Trace;
 
 import java.util.List;
 
@@ -46,6 +47,7 @@ public class R2dbcConfiguration {
     @Bean
     public ConnectionFactory connectionFactoryWithTracing(ConnectionPool original) {
         return ProxyConnectionFactory.builder(original)
+            .listener(new TracingExecutionListener(tracer))
             .build();
     }
 

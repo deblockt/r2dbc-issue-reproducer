@@ -24,7 +24,7 @@
         <jqwik.version>1.2.1</jqwik.version>
         <logstash-logback-encoder.version>6.3</logstash-logback-encoder.version>
 
-        <r2dbc-releasetrain.version>Arabba-SR4</r2dbc-releasetrain.version>
+        <r2dbc-releasetrain.version>Arabba-SR6</r2dbc-releasetrain.version>
         <spring-data-r2dbc.version>1.0.0.RELEASE</spring-data-r2dbc.version>
 
         <jaxb-api.version>2.3.1</jaxb-api.version>
@@ -52,10 +52,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator-autoconfigure</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
