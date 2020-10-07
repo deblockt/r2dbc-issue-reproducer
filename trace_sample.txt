@@ -1,0 +1,20 @@
+2020-10-07 10:50:17.672  INFO [-,,,] 521405 --- [or-http-epoll-8] r.reproducer.StartAndEndLogWebFilter     : INTERNAL start request to /test
+2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] o.s.d.r.c.R2dbcTransactionManager        : Creating new transaction with name [r2dbc.reproducer.TestController.simulate]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] o.s.d.r.c.R2dbcTransactionManager        : Acquired Connection [MonoLift] for R2DBC transaction
+2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] o.s.d.r.c.R2dbcTransactionManager        : Switching R2DBC Connection [PooledConnection-proxy [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@65065a83, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@6139c2fb}]]] to manual commit
+2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : Executing query: BEGIN
+2020-10-07 10:50:17.674  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] r2dbc.reproducer.TestController          : before insert data
+2020-10-07 10:50:17.674 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r2dbc.core.DefaultDatabaseClient   : Executing SQL statement [INSERT INTO applied_message (id) VALUES ($1)]
+2020-10-07 10:50:17.674 DEBUG [-,93cf6dd2e00c1412,93cf6dd2e00c1412,true] 521405 --- [tor-tcp-epoll-5] io.r2dbc.postgresql.QUERY                : Executing query: INSERT INTO applied_message (id) VALUES ($1) RETURNING *
+2020-10-07 10:50:17.715  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] r2dbc.reproducer.TestController          : after the insertion
+2020-10-07 10:50:17.715  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] r2dbc.reproducer.TestController          : after creating the response entity
+2020-10-07 10:50:17.715 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering beforeCommit synchronization
+2020-10-07 10:50:17.715 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering beforeCompletion synchronization
+2020-10-07 10:50:17.715 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Initiating transaction commit
+2020-10-07 10:50:17.715 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Committing R2DBC transaction on Connection [PooledConnection-proxy [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@65065a83, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@6139c2fb}]]]
+2020-10-07 10:50:17.715 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] io.r2dbc.postgresql.QUERY                : Executing query: COMMIT
+2020-10-07 10:50:17.717 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering afterCommit synchronization
+2020-10-07 10:50:17.717 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering afterCompletion synchronization
+2020-10-07 10:50:17.717 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Releasing R2DBC Connection [PooledConnection-proxy [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@65065a83, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@6139c2fb}]]] after transaction
+2020-10-07 10:50:17.717  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] r.reproducer.StartAndEndLogWebFilter     : INTERNAL end request to /test with status code 200 OK. duration: 45ms
+
