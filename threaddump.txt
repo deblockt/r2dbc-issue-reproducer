@@ -1,23 +1,23 @@
 
-2020-10-07 10:47:10
+2020-10-07 10:53:17
 Full thread dump OpenJDK 64-Bit Server VM (13.0.3+3-Ubuntu-1ubuntu2 mixed mode):
 
 Threads class SMR info:
-_java_thread_list=0x00007fc1a4004690, length=42, elements={
-0x00007fc26c230000, 0x00007fc26c233800, 0x00007fc26c254800, 0x00007fc26c249000,
-0x00007fc26c24b000, 0x00007fc26c306800, 0x00007fc26c311000, 0x00007fc26d6b8000,
-0x00007fc26d71e800, 0x00007fc26d773800, 0x00007fc26d808000, 0x00007fc26d809000,
-0x00007fc26d80b000, 0x00007fc26d80d000, 0x00007fc26d80f000, 0x00007fc26d811000,
-0x00007fc26d812800, 0x00007fc26d814800, 0x00007fc26d816800, 0x00007fc26d818800,
-0x00007fc26d81a000, 0x00007fc26ca9b000, 0x00007fc26e032000, 0x00007fc26e02f000,
-0x00007fc26c01d000, 0x00007fc16c004800, 0x00007fc16c00b000, 0x00007fc16c00c800,
-0x00007fc16c00d800, 0x00007fc16c00f000, 0x00007fc16c010000, 0x00007fc16c011000,
-0x00007fc16c012800, 0x00007fc16c013800, 0x00007fc16c015000, 0x00007fc16c016000,
-0x00007fc220001000, 0x00007fc194088800, 0x00007fc1a4002000, 0x00007fc1b4024800,
-0x00007fc1b401f000, 0x00007fc1a4003000
+_java_thread_list=0x00007fd12c00ed90, length=42, elements={
+0x00007fd208230000, 0x00007fd208233800, 0x00007fd208254800, 0x00007fd208249000,
+0x00007fd20824b000, 0x00007fd208307800, 0x00007fd208312000, 0x00007fd2096b1800,
+0x00007fd209715000, 0x00007fd2097fc800, 0x00007fd2097fd800, 0x00007fd2097ff800,
+0x00007fd209801000, 0x00007fd209803000, 0x00007fd209805000, 0x00007fd209807000,
+0x00007fd209809000, 0x00007fd20980a800, 0x00007fd20980c800, 0x00007fd20980e800,
+0x00007fd209810800, 0x00007fd209c22000, 0x00007fd20a02c800, 0x00007fd20a029000,
+0x00007fd20801d000, 0x00007fd130004800, 0x00007fd13000b800, 0x00007fd13000f800,
+0x00007fd130011000, 0x00007fd130012000, 0x00007fd130013800, 0x00007fd130014800,
+0x00007fd130015800, 0x00007fd130017000, 0x00007fd130018000, 0x00007fd130019800,
+0x00007fd1bc001000, 0x00007fd134099000, 0x00007fd12c00d000, 0x00007fd150018800,
+0x00007fd15001e800, 0x00007fd12c00e000
 }
 
-"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=4,61ms elapsed=191,29s tid=0x00007fc26c230000 nid=0x7f4c6 waiting on condition  [0x00007fc23d6fc000]
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=4,72ms elapsed=40,57s tid=0x00007fd208230000 nid=0x7fda8 waiting on condition  [0x00007fd20c1d8000]
    java.lang.Thread.State: RUNNABLE
         at java.lang.ref.Reference.waitForReferencePendingList(java.base@13.0.3/Native Method)
         at java.lang.ref.Reference.processPendingReferences(java.base@13.0.3/Reference.java:241)
@@ -26,49 +26,49 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,28ms elapsed=191,29s tid=0x00007fc26c233800 nid=0x7f4c7 in Object.wait()  [0x00007fc23d5fb000]
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,47ms elapsed=40,57s tid=0x00007fd208233800 nid=0x7fda9 in Object.wait()  [0x00007fd1e8ba7000]
    java.lang.Thread.State: WAITING (on object monitor)
         at java.lang.Object.wait(java.base@13.0.3/Native Method)
-        - waiting on <0x0000000708655d80> (a java.lang.ref.ReferenceQueue$Lock)
+        - waiting on <0x0000000708705920> (a java.lang.ref.ReferenceQueue$Lock)
         at java.lang.ref.ReferenceQueue.remove(java.base@13.0.3/ReferenceQueue.java:155)
-        - locked <0x0000000708655d80> (a java.lang.ref.ReferenceQueue$Lock)
+        - locked <0x0000000708705920> (a java.lang.ref.ReferenceQueue$Lock)
         at java.lang.ref.ReferenceQueue.remove(java.base@13.0.3/ReferenceQueue.java:176)
         at java.lang.ref.Finalizer$FinalizerThread.run(java.base@13.0.3/Finalizer.java:170)
 
    Locked ownable synchronizers:
         - None
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,21ms elapsed=191,28s tid=0x00007fc26c254800 nid=0x7f4c8 runnable  [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,32ms elapsed=40,56s tid=0x00007fd208254800 nid=0x7fdaa runnable  [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
         - None
 
-"C1 CompilerThread0" #5 daemon prio=9 os_prio=0 cpu=3088,16ms elapsed=191,28s tid=0x00007fc26c249000 nid=0x7f4c9 waiting on condition  [0x0000000000000000]
+"C1 CompilerThread0" #5 daemon prio=9 os_prio=0 cpu=2982,37ms elapsed=40,56s tid=0x00007fd208249000 nid=0x7fdab waiting on condition  [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
    No compile task
 
    Locked ownable synchronizers:
         - None
 
-"Sweeper thread" #9 daemon prio=9 os_prio=0 cpu=65,21ms elapsed=191,28s tid=0x00007fc26c24b000 nid=0x7f4ca runnable  [0x0000000000000000]
+"Sweeper thread" #9 daemon prio=9 os_prio=0 cpu=60,38ms elapsed=40,56s tid=0x00007fd20824b000 nid=0x7fdac runnable  [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
         - None
 
-"Service Thread" #10 daemon prio=9 os_prio=0 cpu=21,59ms elapsed=191,25s tid=0x00007fc26c306800 nid=0x7f4cb runnable  [0x0000000000000000]
+"Service Thread" #10 daemon prio=9 os_prio=0 cpu=32,87ms elapsed=40,54s tid=0x00007fd208307800 nid=0x7fdad runnable  [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
         - None
 
-"Common-Cleaner" #11 daemon prio=8 os_prio=0 cpu=3,39ms elapsed=191,25s tid=0x00007fc26c311000 nid=0x7f4cd in Object.wait()  [0x00007fc23c216000]
+"Common-Cleaner" #11 daemon prio=8 os_prio=0 cpu=3,52ms elapsed=40,53s tid=0x00007fd208312000 nid=0x7fdaf in Object.wait()  [0x00007fd1e85a0000]
    java.lang.Thread.State: TIMED_WAITING (on object monitor)
         at java.lang.Object.wait(java.base@13.0.3/Native Method)
-        - waiting on <0x00000007086566a8> (a java.lang.ref.ReferenceQueue$Lock)
+        - waiting on <0x0000000708706248> (a java.lang.ref.ReferenceQueue$Lock)
         at java.lang.ref.ReferenceQueue.remove(java.base@13.0.3/ReferenceQueue.java:155)
-        - locked <0x00000007086566a8> (a java.lang.ref.ReferenceQueue$Lock)
+        - locked <0x0000000708706248> (a java.lang.ref.ReferenceQueue$Lock)
         at jdk.internal.ref.CleanerImpl.run(java.base@13.0.3/CleanerImpl.java:148)
         at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
         at jdk.internal.misc.InnocuousThread.run(java.base@13.0.3/InnocuousThread.java:134)
@@ -76,10 +76,10 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@55053f81}" #17 daemon prio=5 os_prio=0 cpu=181,35ms elapsed=189,05s tid=0x00007fc26d6b8000 nid=0x7f4d9 waiting on condition  [0x00007fc23c115000]
+"AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@1fee4278}" #17 daemon prio=5 os_prio=0 cpu=475,45ms elapsed=38,33s tid=0x00007fd2096b1800 nid=0x7fdba waiting on condition  [0x00007fd1e829f000]
    java.lang.Thread.State: TIMED_WAITING (parking)
         at jdk.internal.misc.Unsafe.park(java.base@13.0.3/Native Method)
-        - parking to wait for  <0x00000007095303f8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+        - parking to wait for  <0x000000070951d6b0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
         at java.util.concurrent.locks.LockSupport.parkNanos(java.base@13.0.3/LockSupport.java:235)
         at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@13.0.3/AbstractQueuedSynchronizer.java:2123)
         at zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
@@ -89,10 +89,10 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"boundedElastic-evictor-1" #18 daemon prio=5 os_prio=0 cpu=0,53ms elapsed=188,96s tid=0x00007fc26d71e800 nid=0x7f4da waiting on condition  [0x00007fc20ddca000]
+"boundedElastic-evictor-1" #18 daemon prio=5 os_prio=0 cpu=0,26ms elapsed=38,27s tid=0x00007fd209715000 nid=0x7fdbb waiting on condition  [0x00007fd1d8116000]
    java.lang.Thread.State: TIMED_WAITING (parking)
         at jdk.internal.misc.Unsafe.park(java.base@13.0.3/Native Method)
-        - parking to wait for  <0x0000000709538990> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+        - parking to wait for  <0x0000000709764870> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
         at java.util.concurrent.locks.LockSupport.parkNanos(java.base@13.0.3/LockSupport.java:235)
         at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@13.0.3/AbstractQueuedSynchronizer.java:2123)
         at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.3/ScheduledThreadPoolExecutor.java:1182)
@@ -105,7 +105,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-1" #19 daemon prio=5 os_prio=0 cpu=457,52ms elapsed=188,92s tid=0x00007fc26d773800 nid=0x7f4db runnable  [0x00007fc20d8b9000]
+"reactor-tcp-epoll-1" #19 daemon prio=5 os_prio=0 cpu=689,10ms elapsed=38,23s tid=0x00007fd2097fc800 nid=0x7fdbc runnable  [0x00007fd192dee000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -120,7 +120,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-2" #20 daemon prio=5 os_prio=0 cpu=332,39ms elapsed=188,92s tid=0x00007fc26d808000 nid=0x7f4dc runnable  [0x00007fc20d7b8000]
+"reactor-tcp-epoll-2" #20 daemon prio=5 os_prio=0 cpu=694,21ms elapsed=38,23s tid=0x00007fd2097fd800 nid=0x7fdbd runnable  [0x00007fd192ced000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -135,7 +135,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-3" #21 daemon prio=5 os_prio=0 cpu=358,10ms elapsed=188,92s tid=0x00007fc26d809000 nid=0x7f4dd runnable  [0x00007fc20d6b7000]
+"reactor-tcp-epoll-3" #21 daemon prio=5 os_prio=0 cpu=678,88ms elapsed=38,23s tid=0x00007fd2097ff800 nid=0x7fdbe runnable  [0x00007fd192bec000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -150,7 +150,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-4" #22 daemon prio=5 os_prio=0 cpu=347,27ms elapsed=188,92s tid=0x00007fc26d80b000 nid=0x7f4de runnable  [0x00007fc20d5b6000]
+"reactor-tcp-epoll-4" #22 daemon prio=5 os_prio=0 cpu=693,66ms elapsed=38,23s tid=0x00007fd209801000 nid=0x7fdbf runnable  [0x00007fd192aeb000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -165,7 +165,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-5" #23 daemon prio=5 os_prio=0 cpu=333,06ms elapsed=188,92s tid=0x00007fc26d80d000 nid=0x7f4df runnable  [0x00007fc20d4b5000]
+"reactor-tcp-epoll-5" #23 daemon prio=5 os_prio=0 cpu=686,69ms elapsed=38,23s tid=0x00007fd209803000 nid=0x7fdc0 runnable  [0x00007fd1929ea000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -180,7 +180,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-6" #24 daemon prio=5 os_prio=0 cpu=330,75ms elapsed=188,92s tid=0x00007fc26d80f000 nid=0x7f4e0 runnable  [0x00007fc20d3b4000]
+"reactor-tcp-epoll-6" #24 daemon prio=5 os_prio=0 cpu=688,82ms elapsed=38,23s tid=0x00007fd209805000 nid=0x7fdc1 runnable  [0x00007fd1928e9000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -195,7 +195,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-7" #25 daemon prio=5 os_prio=0 cpu=337,06ms elapsed=188,92s tid=0x00007fc26d811000 nid=0x7f4e1 runnable  [0x00007fc20d2b3000]
+"reactor-tcp-epoll-7" #25 daemon prio=5 os_prio=0 cpu=706,09ms elapsed=38,23s tid=0x00007fd209807000 nid=0x7fdc2 runnable  [0x00007fd1927e8000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -210,7 +210,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-8" #26 daemon prio=5 os_prio=0 cpu=357,81ms elapsed=188,92s tid=0x00007fc26d812800 nid=0x7f4e2 runnable  [0x00007fc20d1b2000]
+"reactor-tcp-epoll-8" #26 daemon prio=5 os_prio=0 cpu=733,92ms elapsed=38,23s tid=0x00007fd209809000 nid=0x7fdc3 runnable  [0x00007fd1926e7000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -225,7 +225,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-9" #27 daemon prio=5 os_prio=0 cpu=330,36ms elapsed=188,92s tid=0x00007fc26d814800 nid=0x7f4e3 runnable  [0x00007fc20d0b1000]
+"reactor-tcp-epoll-9" #27 daemon prio=5 os_prio=0 cpu=672,36ms elapsed=38,23s tid=0x00007fd20980a800 nid=0x7fdc4 runnable  [0x00007fd1925e6000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -240,7 +240,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-10" #28 daemon prio=5 os_prio=0 cpu=351,68ms elapsed=188,92s tid=0x00007fc26d816800 nid=0x7f4e4 runnable  [0x00007fc20cfb0000]
+"reactor-tcp-epoll-10" #28 daemon prio=5 os_prio=0 cpu=695,82ms elapsed=38,23s tid=0x00007fd20980c800 nid=0x7fdc5 runnable  [0x00007fd1924e5000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -255,7 +255,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-11" #29 daemon prio=5 os_prio=0 cpu=0,07ms elapsed=188,92s tid=0x00007fc26d818800 nid=0x7f4e5 runnable  [0x00007fc20ceaf000]
+"reactor-tcp-epoll-11" #29 daemon prio=5 os_prio=0 cpu=0,19ms elapsed=38,23s tid=0x00007fd20980e800 nid=0x7fdc6 runnable  [0x00007fd1923e4000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -270,7 +270,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-tcp-epoll-12" #30 daemon prio=5 os_prio=0 cpu=0,09ms elapsed=188,92s tid=0x00007fc26d81a000 nid=0x7f4e6 runnable  [0x00007fc20cdae000]
+"reactor-tcp-epoll-12" #30 daemon prio=5 os_prio=0 cpu=0,13ms elapsed=38,23s tid=0x00007fd209810800 nid=0x7fdc7 runnable  [0x00007fd1922e3000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -285,10 +285,10 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"spring.cloud.inetutils" #148 daemon prio=5 os_prio=0 cpu=0,30ms elapsed=185,91s tid=0x00007fc26ca9b000 nid=0x7f561 waiting on condition  [0x00007fc1beef1000]
+"spring.cloud.inetutils" #148 daemon prio=5 os_prio=0 cpu=0,30ms elapsed=35,27s tid=0x00007fd209c22000 nid=0x7fe45 waiting on condition  [0x00007fd1907d8000]
    java.lang.Thread.State: WAITING (parking)
         at jdk.internal.misc.Unsafe.park(java.base@13.0.3/Native Method)
-        - parking to wait for  <0x000000070a8fdd70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+        - parking to wait for  <0x0000000708601f78> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
         at java.util.concurrent.locks.LockSupport.park(java.base@13.0.3/LockSupport.java:194)
         at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.3/AbstractQueuedSynchronizer.java:2081)
         at java.util.concurrent.LinkedBlockingQueue.take(java.base@13.0.3/LinkedBlockingQueue.java:433)
@@ -300,7 +300,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-1" #149 daemon prio=5 os_prio=0 cpu=298,49ms elapsed=185,53s tid=0x00007fc26e032000 nid=0x7f562 runnable  [0x00007fc1beaed000]
+"reactor-http-epoll-1" #149 daemon prio=5 os_prio=0 cpu=626,50ms elapsed=35,04s tid=0x00007fd20a02c800 nid=0x7fe46 runnable  [0x00007fd1902d3000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -315,10 +315,10 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"server" #150 prio=5 os_prio=0 cpu=0,91ms elapsed=185,52s tid=0x00007fc26e02f000 nid=0x7f563 waiting on condition  [0x00007fc1bebee000]
+"server" #150 prio=5 os_prio=0 cpu=0,84ms elapsed=35,03s tid=0x00007fd20a029000 nid=0x7fe47 waiting on condition  [0x00007fd190fe0000]
    java.lang.Thread.State: WAITING (parking)
         at jdk.internal.misc.Unsafe.park(java.base@13.0.3/Native Method)
-        - parking to wait for  <0x000000070adb93a8> (a java.util.concurrent.CountDownLatch$Sync)
+        - parking to wait for  <0x0000000708600f58> (a java.util.concurrent.CountDownLatch$Sync)
         at java.util.concurrent.locks.LockSupport.park(java.base@13.0.3/LockSupport.java:194)
         at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(java.base@13.0.3/AbstractQueuedSynchronizer.java:885)
         at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(java.base@13.0.3/AbstractQueuedSynchronizer.java:1039)
@@ -331,28 +331,13 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"DestroyJavaVM" #152 prio=5 os_prio=0 cpu=5243,52ms elapsed=185,52s tid=0x00007fc26c01d000 nid=0x7f4be waiting on condition  [0x0000000000000000]
+"DestroyJavaVM" #152 prio=5 os_prio=0 cpu=5010,29ms elapsed=35,03s tid=0x00007fd20801d000 nid=0x7fda0 waiting on condition  [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-2" #153 daemon prio=5 os_prio=0 cpu=381,42ms elapsed=180,94s tid=0x00007fc16c004800 nid=0x7f5a8 runnable  [0x00007fc1bf5f8000]
-   java.lang.Thread.State: RUNNABLE
-        at io.netty.channel.epoll.Native.epollWait(Native Method)
-        at io.netty.channel.epoll.Native.epollWait(Native.java:148)
-        at io.netty.channel.epoll.Native.epollWait(Native.java:141)
-        at io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:290)
-        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:347)
-        at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
-        at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-        at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-        at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
-
-   Locked ownable synchronizers:
-        - None
-
-"reactor-http-epoll-3" #156 daemon prio=5 os_prio=0 cpu=179,87ms elapsed=92,82s tid=0x00007fc16c00b000 nid=0x7f863 runnable  [0x00007fc1be9ec000]
+"reactor-http-epoll-2" #153 daemon prio=5 os_prio=0 cpu=474,57ms elapsed=27,26s tid=0x00007fd130004800 nid=0x7ff43 runnable  [0x00007fd190cdd000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -367,7 +352,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-4" #157 daemon prio=5 os_prio=0 cpu=185,53ms elapsed=92,75s tid=0x00007fc16c00c800 nid=0x7f865 runnable  [0x00007fc1bf1f4000]
+"reactor-http-epoll-3" #154 daemon prio=5 os_prio=0 cpu=382,98ms elapsed=27,05s tid=0x00007fd13000b800 nid=0x7ff52 runnable  [0x00007fd190dde000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -382,7 +367,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-5" #158 daemon prio=5 os_prio=0 cpu=189,97ms elapsed=92,68s tid=0x00007fc16c00d800 nid=0x7f866 runnable  [0x00007fc1bf2f5000]
+"reactor-http-epoll-4" #155 daemon prio=5 os_prio=0 cpu=379,21ms elapsed=26,96s tid=0x00007fd13000f800 nid=0x7ff53 runnable  [0x00007fd1905d6000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -397,7 +382,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-6" #159 daemon prio=5 os_prio=0 cpu=174,21ms elapsed=92,62s tid=0x00007fc16c00f000 nid=0x7f867 runnable  [0x00007fc1bf6f9000]
+"reactor-http-epoll-5" #156 daemon prio=5 os_prio=0 cpu=375,11ms elapsed=26,94s tid=0x00007fd130011000 nid=0x7ff55 runnable  [0x00007fd1909da000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -412,7 +397,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-7" #160 daemon prio=5 os_prio=0 cpu=168,97ms elapsed=92,56s tid=0x00007fc16c010000 nid=0x7f868 runnable  [0x00007fc1bf3f6000]
+"reactor-http-epoll-6" #157 daemon prio=5 os_prio=0 cpu=385,22ms elapsed=26,92s tid=0x00007fd130012000 nid=0x7ff56 runnable  [0x00007fd117ffe000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -427,7 +412,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-8" #161 daemon prio=5 os_prio=0 cpu=165,80ms elapsed=92,50s tid=0x00007fc16c011000 nid=0x7f869 runnable  [0x00007fc1bfafd000]
+"reactor-http-epoll-7" #158 daemon prio=5 os_prio=0 cpu=386,30ms elapsed=26,91s tid=0x00007fd130013800 nid=0x7ff57 runnable  [0x00007fd190bdc000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -442,7 +427,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-9" #162 daemon prio=5 os_prio=0 cpu=166,82ms elapsed=92,44s tid=0x00007fc16c012800 nid=0x7f86a runnable  [0x00007fc1bf7fa000]
+"reactor-http-epoll-8" #159 daemon prio=5 os_prio=0 cpu=391,88ms elapsed=26,88s tid=0x00007fd130014800 nid=0x7ff59 runnable  [0x00007fd1903d4000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -457,7 +442,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-10" #163 daemon prio=5 os_prio=0 cpu=164,15ms elapsed=92,38s tid=0x00007fc16c013800 nid=0x7f86b runnable  [0x00007fc1bf8fb000]
+"reactor-http-epoll-9" #160 daemon prio=5 os_prio=0 cpu=386,31ms elapsed=26,86s tid=0x00007fd130015800 nid=0x7ff5a runnable  [0x00007fd190adb000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -472,7 +457,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-11" #164 daemon prio=5 os_prio=0 cpu=177,58ms elapsed=92,32s tid=0x00007fc16c015000 nid=0x7f86d runnable  [0x00007fc1bfbfe000]
+"reactor-http-epoll-10" #161 daemon prio=5 os_prio=0 cpu=383,94ms elapsed=26,84s tid=0x00007fd130017000 nid=0x7ff5b runnable  [0x00007fd117efd000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -487,7 +472,7 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"reactor-http-epoll-12" #165 daemon prio=5 os_prio=0 cpu=174,46ms elapsed=92,31s tid=0x00007fc16c016000 nid=0x7f86e runnable  [0x00007fc1becef000]
+"reactor-http-epoll-11" #162 daemon prio=5 os_prio=0 cpu=381,70ms elapsed=26,82s tid=0x00007fd130018000 nid=0x7ff5c runnable  [0x00007fd1911e2000]
    java.lang.Thread.State: RUNNABLE
         at io.netty.channel.epoll.Native.epollWait(Native Method)
         at io.netty.channel.epoll.Native.epollWait(Native.java:148)
@@ -502,13 +487,28 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"Attach Listener" #167 daemon prio=9 os_prio=0 cpu=68,09ms elapsed=10,45s tid=0x00007fc220001000 nid=0x7fa6e waiting on condition  [0x0000000000000000]
+"reactor-http-epoll-12" #163 daemon prio=5 os_prio=0 cpu=371,21ms elapsed=26,81s tid=0x00007fd130019800 nid=0x7ff5d runnable  [0x00007fd1904d5000]
+   java.lang.Thread.State: RUNNABLE
+        at io.netty.channel.epoll.Native.epollWait(Native Method)
+        at io.netty.channel.epoll.Native.epollWait(Native.java:148)
+        at io.netty.channel.epoll.Native.epollWait(Native.java:141)
+        at io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:290)
+        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:347)
+        at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+        at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
+
+   Locked ownable synchronizers:
+        - None
+
+"Attach Listener" #165 daemon prio=9 os_prio=0 cpu=52,69ms elapsed=2,35s tid=0x00007fd1bc001000 nid=0x7ffb2 waiting on condition  [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
         - None
 
-"RMI TCP Accept-0" #168 daemon prio=9 os_prio=0 cpu=1,13ms elapsed=8,92s tid=0x00007fc194088800 nid=0x7fa70 runnable  [0x00007fc1bf4f7000]
+"RMI TCP Accept-0" #166 daemon prio=9 os_prio=0 cpu=0,77ms elapsed=2,05s tid=0x00007fd134099000 nid=0x7ffb3 runnable  [0x00007fd1906d7000]
    java.lang.Thread.State: RUNNABLE
         at sun.nio.ch.Net.accept(java.base@13.0.3/Native Method)
         at sun.nio.ch.NioSocketImpl.accept(java.base@13.0.3/NioSocketImpl.java:755)
@@ -523,9 +523,9 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
         at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
 
    Locked ownable synchronizers:
-        - <0x0000000714fcd078> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+        - <0x0000000713e5fff0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
 
-"RMI TCP Connection(1)-127.0.0.1" #169 daemon prio=9 os_prio=0 cpu=73,21ms elapsed=8,89s tid=0x00007fc1a4002000 nid=0x7fa73 runnable  [0x00007fc1bf9fc000]
+"RMI TCP Connection(1)-127.0.0.1" #167 daemon prio=9 os_prio=0 cpu=38,70ms elapsed=2,04s tid=0x00007fd12c00d000 nid=0x7ffb5 runnable  [0x00007fd1908d8000]
    java.lang.Thread.State: RUNNABLE
         at sun.nio.ch.Net.poll(java.base@13.0.3/Native Method)
         at sun.nio.ch.NioSocketImpl.park(java.base@13.0.3/NioSocketImpl.java:182)
@@ -536,12 +536,12 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
         at java.net.Socket$SocketInputStream.read(java.base@13.0.3/Socket.java:937)
         at java.io.BufferedInputStream.fill(java.base@13.0.3/BufferedInputStream.java:245)
         at java.io.BufferedInputStream.read(java.base@13.0.3/BufferedInputStream.java:264)
-        - locked <0x0000000714e22348> (a java.io.BufferedInputStream)
+        - locked <0x0000000713ea5b48> (a java.io.BufferedInputStream)
         at java.io.FilterInputStream.read(java.base@13.0.3/FilterInputStream.java:83)
         at sun.rmi.transport.tcp.TCPTransport.handleMessages(java.rmi@13.0.3/TCPTransport.java:544)
         at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(java.rmi@13.0.3/TCPTransport.java:796)
         at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(java.rmi@13.0.3/TCPTransport.java:677)
-        at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1636/0x0000000800aa5c40.run(java.rmi@13.0.3/Unknown Source)
+        at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1641/0x0000000800aa5c40.run(java.rmi@13.0.3/Unknown Source)
         at java.security.AccessController.executePrivileged(java.base@13.0.3/AccessController.java:753)
         at java.security.AccessController.doPrivileged(java.base@13.0.3/AccessController.java:391)
         at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(java.rmi@13.0.3/TCPTransport.java:676)
@@ -550,13 +550,13 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
         at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
 
    Locked ownable synchronizers:
-        - <0x0000000714fe3c50> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
-        - <0x0000000714fe41d8> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+        - <0x0000000713e7e0f8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+        - <0x0000000713e7e680> (a java.util.concurrent.ThreadPoolExecutor$Worker)
 
-"RMI Scheduler(0)" #170 daemon prio=9 os_prio=0 cpu=0,18ms elapsed=8,88s tid=0x00007fc1b4024800 nid=0x7fa74 waiting on condition  [0x00007fc1bf0f3000]
+"RMI Scheduler(0)" #168 daemon prio=9 os_prio=0 cpu=0,12ms elapsed=2,03s tid=0x00007fd150018800 nid=0x7ffb6 waiting on condition  [0x00007fd1901d2000]
    java.lang.Thread.State: TIMED_WAITING (parking)
         at jdk.internal.misc.Unsafe.park(java.base@13.0.3/Native Method)
-        - parking to wait for  <0x0000000714fc7910> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+        - parking to wait for  <0x0000000713e5a648> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
         at java.util.concurrent.locks.LockSupport.parkNanos(java.base@13.0.3/LockSupport.java:235)
         at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@13.0.3/AbstractQueuedSynchronizer.java:2123)
         at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.3/ScheduledThreadPoolExecutor.java:1182)
@@ -569,18 +569,18 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
    Locked ownable synchronizers:
         - None
 
-"JMX server connection timeout 171" #171 daemon prio=9 os_prio=0 cpu=3,41ms elapsed=8,87s tid=0x00007fc1b401f000 nid=0x7fa76 in Object.wait()  [0x00007fc1bedf0000]
+"JMX server connection timeout 169" #169 daemon prio=9 os_prio=0 cpu=2,75ms elapsed=2,03s tid=0x00007fd15001e800 nid=0x7ffb7 in Object.wait()  [0x00007fd1150f8000]
    java.lang.Thread.State: TIMED_WAITING (on object monitor)
         at java.lang.Object.wait(java.base@13.0.3/Native Method)
-        - waiting on <0x0000000714e91480> (a [I)
+        - waiting on <0x0000000713ef80d8> (a [I)
         at com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout.run(java.management@13.0.3/ServerCommunicatorAdmin.java:171)
-        - locked <0x0000000714e91480> (a [I)
+        - locked <0x0000000713ef80d8> (a [I)
         at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
 
    Locked ownable synchronizers:
         - None
 
-"RMI TCP Connection(2)-127.0.0.1" #172 daemon prio=9 os_prio=0 cpu=10,84ms elapsed=7,79s tid=0x00007fc1a4003000 nid=0x7fa79 runnable  [0x00007fc16bbfe000]
+"RMI TCP Connection(2)-127.0.0.1" #170 daemon prio=9 os_prio=0 cpu=1,12ms elapsed=1,00s tid=0x00007fd12c00e000 nid=0x7ffb9 runnable  [0x00007fd190ede000]
    java.lang.Thread.State: RUNNABLE
         at sun.nio.ch.Net.poll(java.base@13.0.3/Native Method)
         at sun.nio.ch.NioSocketImpl.park(java.base@13.0.3/NioSocketImpl.java:182)
@@ -591,12 +591,12 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
         at java.net.Socket$SocketInputStream.read(java.base@13.0.3/Socket.java:937)
         at java.io.BufferedInputStream.fill(java.base@13.0.3/BufferedInputStream.java:245)
         at java.io.BufferedInputStream.read(java.base@13.0.3/BufferedInputStream.java:264)
-        - locked <0x0000000714c62bf0> (a java.io.BufferedInputStream)
+        - locked <0x0000000713ce6860> (a java.io.BufferedInputStream)
         at java.io.FilterInputStream.read(java.base@13.0.3/FilterInputStream.java:83)
         at sun.rmi.transport.tcp.TCPTransport.handleMessages(java.rmi@13.0.3/TCPTransport.java:544)
         at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(java.rmi@13.0.3/TCPTransport.java:796)
         at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(java.rmi@13.0.3/TCPTransport.java:677)
-        at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1636/0x0000000800aa5c40.run(java.rmi@13.0.3/Unknown Source)
+        at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1641/0x0000000800aa5c40.run(java.rmi@13.0.3/Unknown Source)
         at java.security.AccessController.executePrivileged(java.base@13.0.3/AccessController.java:753)
         at java.security.AccessController.doPrivileged(java.base@13.0.3/AccessController.java:391)
         at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(java.rmi@13.0.3/TCPTransport.java:676)
@@ -605,43 +605,41 @@ _java_thread_list=0x00007fc1a4004690, length=42, elements={
         at java.lang.Thread.run(java.base@13.0.3/Thread.java:830)
 
    Locked ownable synchronizers:
-        - <0x0000000714fe4578> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
-        - <0x0000000714fe47e8> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+        - <0x0000000713e7ea20> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+        - <0x0000000713e7ec90> (a java.util.concurrent.ThreadPoolExecutor$Worker)
 
-"VM Thread" os_prio=0 cpu=163,94ms elapsed=191,30s tid=0x00007fc26c224000 nid=0x7f4c5 runnable
+"VM Thread" os_prio=0 cpu=147,16ms elapsed=40,57s tid=0x00007fd208224000 nid=0x7fda7 runnable
 
-"GC Thread#0" os_prio=0 cpu=111,74ms elapsed=191,31s tid=0x00007fc26c084800 nid=0x7f4c0 runnable
+"GC Thread#0" os_prio=0 cpu=124,63ms elapsed=40,59s tid=0x00007fd208084800 nid=0x7fda2 runnable
 
-"GC Thread#1" os_prio=0 cpu=88,66ms elapsed=191,01s tid=0x00007fc234001000 nid=0x7f4cf runnable
+"GC Thread#1" os_prio=0 cpu=149,89ms elapsed=40,30s tid=0x00007fd1d0001000 nid=0x7fdb1 runnable
 
-"GC Thread#2" os_prio=0 cpu=103,73ms elapsed=191,01s tid=0x00007fc234003000 nid=0x7f4d0 runnable
+"GC Thread#2" os_prio=0 cpu=122,70ms elapsed=40,30s tid=0x00007fd1d0002800 nid=0x7fdb2 runnable
 
-"GC Thread#3" os_prio=0 cpu=124,69ms elapsed=191,01s tid=0x00007fc234004800 nid=0x7f4d1 runnable
+"GC Thread#3" os_prio=0 cpu=101,86ms elapsed=40,30s tid=0x00007fd1d0004000 nid=0x7fdb3 runnable
 
-"GC Thread#4" os_prio=0 cpu=157,04ms elapsed=191,01s tid=0x00007fc234006000 nid=0x7f4d2 runnable
+"GC Thread#4" os_prio=0 cpu=143,35ms elapsed=40,30s tid=0x00007fd1d0005800 nid=0x7fdb4 runnable
 
-"G1 Main Marker" os_prio=0 cpu=1,48ms elapsed=191,31s tid=0x00007fc26c0a5800 nid=0x7f4c1 runnable
+"GC Thread#5" os_prio=0 cpu=42,17ms elapsed=27,18s tid=0x00007fd1d0128800 nid=0x7ff44 runnable
 
-"G1 Conc#0" os_prio=0 cpu=27,79ms elapsed=191,31s tid=0x00007fc26c0a7800 nid=0x7f4c2 runnable
+"G1 Main Marker" os_prio=0 cpu=2,08ms elapsed=40,59s tid=0x00007fd2080a5800 nid=0x7fda3 runnable
 
-"G1 Conc#1" os_prio=0 cpu=27,08ms elapsed=190,71s tid=0x00007fc240001000 nid=0x7f4d3 runnable
+"G1 Conc#0" os_prio=0 cpu=84,04ms elapsed=40,59s tid=0x00007fd2080a7800 nid=0x7fda4 runnable
 
-"G1 Conc#2" os_prio=0 cpu=26,58ms elapsed=190,71s tid=0x00007fc240002800 nid=0x7f4d4 runnable
+"G1 Conc#1" os_prio=0 cpu=81,35ms elapsed=40,01s tid=0x00007fd1dc001000 nid=0x7fdb5 runnable
 
-"G1 Refine#0" os_prio=0 cpu=11,02ms elapsed=191,31s tid=0x00007fc26c1af800 nid=0x7f4c3 runnable
+"G1 Conc#2" os_prio=0 cpu=83,50ms elapsed=40,01s tid=0x00007fd1dc002800 nid=0x7fdb6 runnable
 
-"G1 Refine#1" os_prio=0 cpu=2,79ms elapsed=186,90s tid=0x00007fc238002800 nid=0x7f4fd runnable
+"G1 Refine#0" os_prio=0 cpu=16,18ms elapsed=40,59s tid=0x00007fd2081af800 nid=0x7fda5 runnable
 
-"G1 Refine#2" os_prio=0 cpu=1,69ms elapsed=186,89s tid=0x00007fc164001000 nid=0x7f4fe runnable
+"G1 Refine#1" os_prio=0 cpu=2,12ms elapsed=36,26s tid=0x00007fd1d4002800 nid=0x7fddd runnable
 
-"G1 Refine#3" os_prio=0 cpu=0,98ms elapsed=186,89s tid=0x00007fc15c001000 nid=0x7f4ff runnable
+"G1 Refine#2" os_prio=0 cpu=1,66ms elapsed=36,26s tid=0x00007fd108001000 nid=0x7fdde runnable
 
-"G1 Refine#4" os_prio=0 cpu=0,86ms elapsed=186,89s tid=0x00007fc160001000 nid=0x7f500 runnable
+"G1 Refine#3" os_prio=0 cpu=0,29ms elapsed=36,22s tid=0x00007fd0fc001000 nid=0x7fddf runnable
 
-"G1 Refine#5" os_prio=0 cpu=0,04ms elapsed=186,89s tid=0x00007fc154001000 nid=0x7f501 runnable
-
-"G1 Young RemSet Sampling" os_prio=0 cpu=31,32ms elapsed=191,31s tid=0x00007fc26c1b1000 nid=0x7f4c4 runnable
-"VM Periodic Task Thread" os_prio=0 cpu=65,01ms elapsed=191,25s tid=0x00007fc26c309000 nid=0x7f4cc waiting on condition
+"G1 Young RemSet Sampling" os_prio=0 cpu=7,95ms elapsed=40,59s tid=0x00007fd2081b1000 nid=0x7fda6 runnable
+"VM Periodic Task Thread" os_prio=0 cpu=13,14ms elapsed=40,54s tid=0x00007fd20830a000 nid=0x7fdae waiting on condition
 
 JNI global refs: 30, weak refs: 0
 

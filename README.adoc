@@ -8,7 +8,7 @@ This code provide 1 endpoint who perform 1 insertion on database.
     docker-compose up -d
     mvn clean spring-boot:run
 
-This branch use the `0.8.4.RELEASE (Arabba-SR6)` version of `r2dbc-postgres`.
+This branch use the `0.8.3.RELEASE (Arabba-SR4)` version of `r2dbc-postgres`.
 
 To test you can run the taurus scenario `test.yml` using bzt.
 Or you can perform a `GET` request on `http://localhost:8080/test` endpoint and see response time log, like that.
