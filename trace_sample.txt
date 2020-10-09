@@ -1,20 +1,53 @@
-2020-10-07 10:50:17.672  INFO [-,,,] 521405 --- [or-http-epoll-8] r.reproducer.StartAndEndLogWebFilter     : INTERNAL start request to /test
-2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] o.s.d.r.c.R2dbcTransactionManager        : Creating new transaction with name [r2dbc.reproducer.TestController.simulate]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] o.s.d.r.c.R2dbcTransactionManager        : Acquired Connection [MonoLift] for R2DBC transaction
-2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] o.s.d.r.c.R2dbcTransactionManager        : Switching R2DBC Connection [PooledConnection-proxy [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@65065a83, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@6139c2fb}]]] to manual commit
-2020-10-07 10:50:17.673 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : Executing query: BEGIN
-2020-10-07 10:50:17.674  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] r2dbc.reproducer.TestController          : before insert data
-2020-10-07 10:50:17.674 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r2dbc.core.DefaultDatabaseClient   : Executing SQL statement [INSERT INTO applied_message (id) VALUES ($1)]
-2020-10-07 10:50:17.674 DEBUG [-,93cf6dd2e00c1412,93cf6dd2e00c1412,true] 521405 --- [tor-tcp-epoll-5] io.r2dbc.postgresql.QUERY                : Executing query: INSERT INTO applied_message (id) VALUES ($1) RETURNING *
-2020-10-07 10:50:17.715  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] r2dbc.reproducer.TestController          : after the insertion
-2020-10-07 10:50:17.715  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] r2dbc.reproducer.TestController          : after creating the response entity
-2020-10-07 10:50:17.715 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering beforeCommit synchronization
-2020-10-07 10:50:17.715 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering beforeCompletion synchronization
-2020-10-07 10:50:17.715 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Initiating transaction commit
-2020-10-07 10:50:17.715 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Committing R2DBC transaction on Connection [PooledConnection-proxy [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@65065a83, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@6139c2fb}]]]
-2020-10-07 10:50:17.715 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] io.r2dbc.postgresql.QUERY                : Executing query: COMMIT
-2020-10-07 10:50:17.717 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering afterCommit synchronization
-2020-10-07 10:50:17.717 TRACE [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Triggering afterCompletion synchronization
-2020-10-07 10:50:17.717 DEBUG [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [tor-tcp-epoll-5] o.s.d.r.c.R2dbcTransactionManager        : Releasing R2DBC Connection [PooledConnection-proxy [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@65065a83, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@6139c2fb}]]] after transaction
-2020-10-07 10:50:17.717  INFO [-,cde0e5665f4fe46d,cde0e5665f4fe46d,true] 521405 --- [or-http-epoll-8] r.reproducer.StartAndEndLogWebFilter     : INTERNAL end request to /test with status code 200 OK. duration: 45ms
-
+2020-10-09 08:17:48.428 DEBUG 220148 --- [or-http-epoll-1] r.n.http.server.HttpServerOperations     : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] New http connection, requesting read
+2020-10-09 08:17:48.428 DEBUG 220148 --- [or-http-epoll-1] reactor.netty.channel.BootstrapHandlers  : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] Initialized pipeline DefaultChannelPipeline{(BootstrapHandlers$BootstrapInitializerHandler#0 = reactor.netty.channel.BootstrapHandlers$BootstrapInitializerHandler), (reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2020-10-09 08:17:48.429 DEBUG 220148 --- [or-http-epoll-1] r.n.http.server.HttpServerOperations     : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] Increasing pending responses, now 1
+2020-10-09 08:17:48.429 DEBUG 220148 --- [or-http-epoll-1] reactor.netty.http.server.HttpServer     : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3e6c3ad3
+2020-10-09 08:17:48.430 DEBUG 220148 --- [or-http-epoll-1] o.s.w.s.adapter.HttpWebHandlerAdapter    : [e9a237db-936] HTTP GET "/test?id=test"
+2020-10-09 08:17:48.430  INFO 220148 --- [or-http-epoll-1] r.reproducer.StartAndEndLogWebFilter     : INTERNAL start request to /test
+2020-10-09 08:17:48.434 DEBUG 220148 --- [or-http-epoll-1] s.w.r.r.m.a.RequestMappingHandlerMapping : [e9a237db-936] Mapped to r2dbc.reproducer.TestController#simulate()
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Creating new transaction with name [r2dbc.reproducer.TestController.simulate]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Acquired Connection [MonoRetry] for R2DBC transaction
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Switching R2DBC Connection [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@69da6fca, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@66a28134}]] to manual commit
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] i.r2dbc.postgresql.PostgresqlConnection  : Setting auto-commit mode to [false]
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] i.r2dbc.postgresql.PostgresqlConnection  : Beginning transaction
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] io.r2dbc.postgresql.QUERY                : Executing query: BEGIN
+2020-10-09 08:17:48.435 DEBUG 220148 --- [or-http-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Query{query='BEGIN'}
+2020-10-09 08:17:48.436 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: CommandComplete{command=BEGIN, rowId=null, rows=null}
+2020-10-09 08:17:48.436 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: ReadyForQuery{transactionStatus=TRANSACTION}
+2020-10-09 08:17:48.436 DEBUG 220148 --- [tor-tcp-epoll-1] i.r2dbc.postgresql.PostgresqlConnection  : Skipping begin transaction because status is OPEN
+2020-10-09 08:17:48.437  INFO 220148 --- [tor-tcp-epoll-1] r2dbc.reproducer.TestController          : before insert data
+2020-10-09 08:17:48.437 DEBUG 220148 --- [tor-tcp-epoll-1] o.s.d.r2dbc.core.DefaultDatabaseClient   : Executing SQL statement [INSERT INTO applied_message (id) VALUES ($1)]
+2020-10-09 08:17:48.437 DEBUG 220148 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : Executing query: INSERT INTO applied_message (id) VALUES ($1) RETURNING *
+2020-10-09 08:17:48.437 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Bind{name='B_934', parameterFormats=[FORMAT_TEXT], parameters=[CompositeByteBuf(ridx: 0, widx: 36, cap: 36, components=1)], resultFormats=[], source='S_0'}
+2020-10-09 08:17:48.438 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Describe{name='B_934', type=PORTAL}
+2020-10-09 08:17:48.438 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Execute{name='B_934', rows=0}
+2020-10-09 08:17:48.438 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Close{name='B_934', type=PORTAL}
+2020-10-09 08:17:48.438 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Sync{}
+2020-10-09 08:17:48.482 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: BindComplete{}
+2020-10-09 08:17:48.482 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: RowDescription{fields=[Field{column=1, dataType=1043, dataTypeModifier=59, dataTypeSize=-1, format=FORMAT_TEXT, name='id', table=16395}]}
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 36, cap: 36/36, unwrapped: PooledUnsafeDirectByteBuf(ridx: 80, widx: 107, cap: 112))]}
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: CommandComplete{command=INSERT, rowId=0, rows=1}
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: CloseComplete{}
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: ReadyForQuery{transactionStatus=TRANSACTION}
+2020-10-09 08:17:48.483  INFO 220148 --- [tor-tcp-epoll-1] r2dbc.reproducer.TestController          : after the insertion
+2020-10-09 08:17:48.483  INFO 220148 --- [tor-tcp-epoll-1] r2dbc.reproducer.TestController          : after creating the response entity
+2020-10-09 08:17:48.483 TRACE 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Triggering beforeCommit synchronization
+2020-10-09 08:17:48.483 TRACE 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Triggering beforeCompletion synchronization
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Initiating transaction commit
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Committing R2DBC transaction on Connection [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@69da6fca, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@66a28134}]]
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : Executing query: COMMIT
+2020-10-09 08:17:48.483 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Request:  Query{query='COMMIT'}
+2020-10-09 08:17:48.485 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: CommandComplete{command=COMMIT, rowId=null, rows=null}
+2020-10-09 08:17:48.485 DEBUG 220148 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : Response: ReadyForQuery{transactionStatus=IDLE}
+2020-10-09 08:17:48.485 TRACE 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Triggering afterCommit synchronization
+2020-10-09 08:17:48.485 TRACE 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Triggering afterCompletion synchronization
+2020-10-09 08:17:48.485 DEBUG 220148 --- [tor-tcp-epoll-1] i.r2dbc.postgresql.PostgresqlConnection  : Setting auto-commit mode to [true]
+2020-10-09 08:17:48.485 DEBUG 220148 --- [tor-tcp-epoll-1] o.s.d.r.c.R2dbcTransactionManager        : Releasing R2DBC Connection [PooledConnection[PostgresqlConnection{client=io.r2dbc.postgresql.client.ReactorNettyClient@69da6fca, codecs=io.r2dbc.postgresql.codec.DefaultCodecs@66a28134}]] after transaction
+2020-10-09 08:17:48.487 DEBUG 220148 --- [tor-tcp-epoll-1] .s.w.r.r.m.a.ResponseEntityResultHandler : Using 'text/html' given [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain;charset=UTF-8, text/event-stream, text/plain;charset=UTF-8, */*]
+2020-10-09 08:17:48.487 DEBUG 220148 --- [tor-tcp-epoll-1] .s.w.r.r.m.a.ResponseEntityResultHandler : [e9a237db-936] 0..1 [java.lang.String]
+2020-10-09 08:17:48.489 DEBUG 220148 --- [tor-tcp-epoll-1] o.s.core.codec.CharSequenceEncoder       : [e9a237db-936] Writing "ok c917ba59-7118-40d9-915b-25dff5cb8d90"
+2020-10-09 08:17:48.490 DEBUG 220148 --- [or-http-epoll-1] r.n.http.server.HttpServerOperations     : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] Decreasing pending responses, now 0
+2020-10-09 08:17:48.490  INFO 220148 --- [or-http-epoll-1] r.reproducer.StartAndEndLogWebFilter     : INTERNAL end request to /test with status code 200 OK. duration: 60ms
+2020-10-09 08:17:48.490 DEBUG 220148 --- [or-http-epoll-1] o.s.w.s.adapter.HttpWebHandlerAdapter    : [e9a237db-936] Completed 200 OK
+2020-10-09 08:17:48.490 DEBUG 220148 --- [or-http-epoll-1] r.n.http.server.HttpServerOperations     : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] Last HTTP response frame
+2020-10-09 08:17:48.490 DEBUG 220148 --- [or-http-epoll-1] r.n.http.server.HttpServerOperations     : [id: 0xe9a237db, L:/[0:0:0:0:0:0:0:1%0]:8080 - R:/[0:0:0:0:0:0:0:1%0]:55640] Last HTTP packet was sent, terminating the channel

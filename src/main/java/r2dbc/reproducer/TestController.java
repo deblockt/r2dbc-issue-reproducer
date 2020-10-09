@@ -24,7 +24,7 @@ public class TestController {
     public Mono<ResponseEntity<String>> simulate() {
         final var id = UUID.randomUUID().toString();
         return
-            Mono.defer(() -> {log.info("before insert data"); return Mono.empty();})
+            Mono.defer(() -> {log.info("before insert data (R2DBC 0.8.4)"); return Mono.empty();})
                 .then(this.insert(id))
                 .doOnNext(it -> log.info("after the insertion"))
                 .map(r -> ResponseEntity.ok("ok " + id))
