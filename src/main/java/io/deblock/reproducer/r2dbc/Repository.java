@@ -56,6 +56,13 @@ public class Repository {
                 .then();
     }
 
+    public Mono<Void> runWithoutMapResultAndBindingUsingSpring() {
+        return Mono.fromRunnable(() -> log.info("before executing query mono"))
+                .then(this.databaseClient.execute("select pg_sleep(:duration), '1' as data").bind("duration", 3).then())
+                .then(Mono.fromRunnable(() -> log.info("after execute the query mono")))
+                .then();
+    }
+
     public Mono<String> getWithoutBindingById() {
         return Mono.fromRunnable(() -> log.info("before executing query mono"))
                 .then(

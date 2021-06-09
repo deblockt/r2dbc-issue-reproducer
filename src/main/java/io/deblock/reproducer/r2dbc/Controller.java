@@ -43,4 +43,10 @@ public class Controller {
     public Mono<?> emptyWithBinding() {
         return repository.runWithoutMapResultAndBinding();
     }
+
+    @Transactional
+    @GetMapping("/test-using-then-and-binding-and-spring")
+    public Mono<?> emptyUsingSpringWithBinding() {
+        return repository.runWithoutMapResultAndBindingUsingSpring();
+    }
 }
