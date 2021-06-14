@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 @Slf4j
 @Component
 public class Repository {
@@ -21,11 +23,11 @@ public class Repository {
         this.accessor = accessor;
     }
 
-    public Mono<String> getWithBindById() {
+    public Mono<String> getWithBindById(int duration) {
         return Mono.fromRunnable(() -> log.info("before executing query mono"))
             .then(
                 databaseClient.execute("select pg_sleep(:duration), '1' as data")
-                    .bind("duration", 3)
+                    .bind("duration", duration)
                     .map(row -> row.get("data", String.class))
                     .one()
             ).doOnNext($ -> log.info("after execute the query mono"));
@@ -72,6 +74,22 @@ public class Repository {
                 ).doOnNext($ -> log.info("after execute the query mono"));
     }
 
+    public Mono<String> emptyResult() {
+        return Mono.fromRunnable(() -> log.info("before executing query mono"))
+                .then(this.accessor.inConnectionMany(connection -> {
+                    return Flux.from(connection.createStatement("select datname from pg_database where datname = $1")
+                            .bind(0, "foo")
+                            .execute())
+                            .flatMap(result -> {
+                                log.info("mapping result");
+                                return result.map((row, it) -> row.get("datname", String.class));
+                            });
+                }).collectList()
+                .filter(list -> !list.isEmpty())
+                .map(it -> it.get(0)))
+                .doOnNext($ -> log.info("after execute the query mono"));
+    }
+
     public Mono<String> getUsingR2DBC() {
         return Mono.fromRunnable(() -> log.info("before executing query mono"))
         .then(this.accessor.inConnectionMany(connection -> {
@@ -86,5 +104,30 @@ public class Repository {
                     });
         }).collectList().map(it -> it.get(0)))
         .doOnNext($ -> log.info("after execute the query mono"));
+    }
+
+
+    public Mono<String> queryWithOneSuccessAndOneError() {
+        return Mono.fromRunnable(() -> log.info("before executing query mono"))
+                .then(this.accessor.inConnectionMany(connection -> {
+                    final var atomicBoolean = new AtomicBoolean(true);
+                    return Flux.from(connection.createStatement("select pg_sleep($1), '1' as data")
+                            .bind(0, 3)
+                            .add()
+                            .bind(0, 1)
+                            .execute())
+                            .flatMap(result -> {
+                                return result.map((row, it) -> {
+                                    if (!atomicBoolean.get()) {
+                                        throw new RuntimeException("second query executed, retrun an error");
+                                    }
+                                    log.info("mapping result");
+                                    atomicBoolean.set(false);
+                                    return row.get("data", String.class);
+                                });
+                            });
+                }).collectList().map(it -> it.get(0)))
+                .doOnNext($ -> log.info("after execute the query mono"))
+                .doOnError($ -> log.info("after execute the query mono"));
     }
 }

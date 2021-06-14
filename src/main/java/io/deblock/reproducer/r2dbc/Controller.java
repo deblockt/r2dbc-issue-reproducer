@@ -17,7 +17,17 @@ public class Controller {
     @Transactional
     @GetMapping("/test-with-binding")
     public Mono<?> list() {
-        return repository.getWithBindById();
+        return repository.getWithBindById(3);
+    }
+
+    @Transactional
+    @GetMapping("/test-with-mono-when")
+    public Mono<?> listWithMonoWhen() {
+        return Mono.when(
+            repository.getWithBindById(3),
+            repository.getWithBindById(1),
+            repository.getWithBindById(2)
+        );
     }
 
     @Transactional
@@ -34,7 +44,7 @@ public class Controller {
 
     @Transactional
     @GetMapping("/test-using-then")
-    public Mono<?> empty() {
+    public Mono<?> emptyUsingThen() {
         return repository.runWithoutMapResult();
     }
 
@@ -48,5 +58,17 @@ public class Controller {
     @GetMapping("/test-using-then-and-binding-and-spring")
     public Mono<?> emptyUsingSpringWithBinding() {
         return repository.runWithoutMapResultAndBindingUsingSpring();
+    }
+
+    @Transactional
+    @GetMapping("/empty")
+    public Mono<?> emptyResult() {
+        return repository.emptyResult();
+    }
+
+    @Transactional
+    @GetMapping("/error")
+    public Mono<?> error() {
+        return repository.queryWithOneSuccessAndOneError();
     }
 }
